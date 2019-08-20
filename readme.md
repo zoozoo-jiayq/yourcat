@@ -1,4 +1,4 @@
-##1 springboot初始化项目地址:
+## 1 springboot初始化项目地址:
 	[spring init](https://start.spring.io/)
 
 ##2 vue初始化
