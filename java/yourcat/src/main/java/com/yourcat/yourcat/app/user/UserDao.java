@@ -1,4 +1,4 @@
-package com.yourcat.yourcat.admin.user;
+package com.yourcat.yourcat.app.user;
 
 import java.util.List;
 

@@ -22,8 +22,8 @@ import org.springframework.security.web.session.SessionManagementFilter;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.filter.CorsFilter;
 
-import com.yourcat.yourcat.admin.user.User;
-import com.yourcat.yourcat.admin.user.UserService;
+import com.yourcat.yourcat.app.user.User;
+import com.yourcat.yourcat.app.user.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

@@ -3,10 +3,10 @@
     <h4 slot="title">登录</h4>
         <form >
             <Row class="row">
-                <Col span="8"><span class="text">用户名：</span></Col><Col span="16"><Input v-model="login.user" size="large"  placeholder="请输入用户名"/></Col>
+                <Col span="8"><span class="text">用户名：</span></Col><Col span="16"><Input v-model="login.username" size="large"  placeholder="请输入用户名"/></Col>
             </Row>
             <Row class="row">
-                <Col span="8"><span class="text">密码：</span></Col><Col span="16"><Input v-model="login.pwd" size="large"  placeholder="请输入密码"/></Col>
+                <Col span="8"><span class="text">密码：</span></Col><Col span="16"><Input type="password" v-model="login.password" size="large"  placeholder="请输入密码"/></Col>
             </Row>
             <Row class="row">
                 <Button type="primary" long size="large" @click="dologin">登录</Button>
@@ -15,6 +15,7 @@
 </Card>
 </template>
 <script>
+const qs = require('qs');
 export default {
     data(){
         return {
@@ -23,7 +24,14 @@ export default {
     },
     methods:{
         dologin(){
-            this.$router.push("/main")
+            console.log(this)
+            this.axios.post("/login",qs.stringify(this.login),{
+                headers:{
+                    "Content-Type":"application/x-www-form-urlencoded"
+                }
+            }).then(res=>{
+                this.$router.push("/main");
+            })
         }
     }
 }
