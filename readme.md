@@ -29,6 +29,14 @@
 ## 5,服务端集群配置
 	负载均衡
 	session
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-redis</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.session</groupId>
+		<artifactId>spring-session-data-redis</artifactId>
+	</dependency>
 
 ## 6,消息队列
 	
@@ -47,6 +55,7 @@
 
 ## 12,统一异常处理
 
+	已经
 ### 12.1 前后台交互数据协议
 	{status:200/500/...,data:""}
 

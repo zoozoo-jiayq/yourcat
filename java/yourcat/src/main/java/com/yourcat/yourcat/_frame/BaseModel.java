@@ -1,10 +1,12 @@
 package com.yourcat.yourcat._frame;
 
+import java.io.Serializable;
+
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class BaseModel {
+public class BaseModel implements Serializable {
 
 	@Id
 	private String id;
