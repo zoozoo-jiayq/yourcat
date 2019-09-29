@@ -4,26 +4,14 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.autoconfigure.BackgroundPreinitializer;
-import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
-import org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityRequestMatcherProviderAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
-import org.springframework.boot.context.ConfigurationWarningsApplicationContextInitializer;
-import org.springframework.boot.context.ContextIdApplicationContextInitializer;
-import org.springframework.boot.context.config.ConfigFileApplicationListener;
-import org.springframework.boot.context.config.DelegatingApplicationContextInitializer;
-import org.springframework.boot.context.config.DelegatingApplicationListener;
-import org.springframework.boot.context.event.EventPublishingRunListener;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.context.ServerPortInfoApplicationContextInitializer;
 import org.springframework.context.annotation.ConfigurationClassPostProcessor;
-import org.springframework.core.io.support.SpringFactoriesLoader;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.yourcat.yourcat.app.user.User;
@@ -31,6 +19,7 @@ import com.yourcat.yourcat.app.user.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Service
 public class YourcatApplicationTests {
 
 	@Resource
@@ -56,33 +45,16 @@ public class YourcatApplicationTests {
 	}
 	
 	void test(){
-		EventPublishingRunListener eventPublishingRunListener = null;
+		ConfigurationClassPostProcessor configurationClassPostProcessor = null;
+		AbstractApplicationContext aac = null;
+		ObjectPostProcessorConfiguration objectPostProcessorConfiguration = null;
 		
-		//初始化applicationContext
-//		SharedMetadataReaderFactoryContextInitializer sm = null;
-		ConditionEvaluationReportLoggingListener crl = null;
-		ConfigurationWarningsApplicationContextInitializer ca = null;
-		ContextIdApplicationContextInitializer cida = null;
-		DelegatingApplicationContextInitializer dac = null;
-		ServerPortInfoApplicationContextInitializer sac = null;
-		
-		//监听ApplicationContextInitializedEvent
-		BackgroundPreinitializer bp = null;
-		DelegatingApplicationListener dal = null;
-		
-		//beanFactoryPostProcessor
-//		SharedMetadataReaderFactoryContextInitializer src = null;
-		ConfigurationWarningsApplicationContextInitializer cdci = null;
-		ConfigFileApplicationListener cfal = null;
-		ConfigurationClassPostProcessor ccpp = null;
-		
-		//security
 		SecurityAutoConfiguration securityAutoConfiguration = null;
-		SecurityRequestMatcherProviderAutoConfiguration securityRequestMatcheProviderAutoConfiguration = null;
-		UserDetailsServiceAutoConfiguration UserDetailsServiceAutoConfiguration = null;
-		SecurityFilterAutoConfiguration  securityFilterAutoConfiguration = null;
-		ReactiveSecurityAutoConfiguration reactiveSecurityAutoConfiguration = null;
-		ReactiveUserDetailsServiceAutoConfiguration reactiveUserDetailsServiceAutoConfiguration = null;
+//		org.springframework.boot.autoconfigure.security.servlet.SecurityRequestMatcherProviderAutoConfiguration,\
+//		org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration,\
+//		org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration,\
+//		org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration,\
+//		org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration,\
 	}
 	
 }

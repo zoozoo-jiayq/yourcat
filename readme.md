@@ -38,6 +38,9 @@
 		<artifactId>spring-session-data-redis</artifactId>
 	</dependency>
 
+### 5.1 分布式同步
+
+
 ## 6,消息队列
 	
 ## 7,MYSQL分表分库
@@ -52,6 +55,9 @@
 	jmap -heap pid
 
 ## 11,大数量复杂报表的实时统计
+
+	1,spring的事件广播机制
+	2,消息队列
 
 ## 12,统一异常处理
 
@@ -84,3 +90,5 @@
 
 ### 12.3 前台处理
 	前台异常处理，通过定义axios的拦截器来实现
+	
+	
