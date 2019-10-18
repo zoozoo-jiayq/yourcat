@@ -1,22 +1,18 @@
 package com.yourcat.yourcat._frame;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import lombok.Data;
+
 @MappedSuperclass
+@Data
 public class BaseModel implements Serializable {
 
 	@Id
 	private String id;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-	
+	private Timestamp insertTime;
 }
